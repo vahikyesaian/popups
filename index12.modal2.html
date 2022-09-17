@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            /* border: 10px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(20deg,rgb(64, 61, 61),rgb(37, 35, 35),rgb(68, 66, 66));
+        }
+        #popup{
+            width: 70%;
+            height: 70vh;
+            border: 1px solid black;
+        }
+        #popup>section{
+            width: 100%;
+            height: 100%;
+            background-color: lavender;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        #popup>section>p{
+            font-size: 18px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-transform: capitalize;
+            text-align: justify;
+            padding: 15px;
+        }
+        #popup>section>button{
+            width: 150px;
+            height: 30px;
+            font-size: 20px;
+            transition: .4s;
+            border: none;
+            border-radius: 5px;
+
+        }
+        #popup>section>button:hover{
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+        #self{
+            width: 35%;
+            height: 35vh;
+            border: 1px solid brown;
+            position: fixed;
+            top: 50%;left: 50%;
+            transform: translate(-300%,-50%);
+            background-color: lightsteelblue;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            overflow: hidden;
+        }
+        #self>span{
+            border: 1px solid black;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 0;right: 0;
+            cursor: pointer;
+            transition: .4s;
+        }
+        #self>span:hover{
+            background-color: whitesmoke;
+        }
+        #self>p{
+            font-size: 17px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-transform: capitalize;
+            text-align: justify;
+            padding: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="popup">
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur recusandae. Aliquid suscipit quis consequatur illum dolor hic cumque exercitationem!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur recusandae. Aliquid suscipit quis consequatur illum dolor hic cumque exercitationem!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, consequatur recusandae. Aliquid suscipit quis consequatur illum dolor hic cumque exercitationem!</p>
+                <button id="btn">view</button>
+            </section>
+            <div id="self">
+                <span>+</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos maxime natus, necessitatibus deserunt ipsa facere odio id consectetur fugiat voluptates. Dolor architecto vel maiores dicta illum natus corrupti nostrum. Ullam laborum sit eligendi eum sapiente ab tempora dolor consequuntur eius.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let x= document.getElementById('self')
+    document.getElementById('btn').addEventListener('click',()=>{
+       x.style.transform='translate(-50%,-50%)'
+    })
+    document.querySelector('#self>span').addEventListener('click',()=>{
+       x.style.transform='translate(300%,-50%)'
+    })
+
+
+
+</script>
+</html>
